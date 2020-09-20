@@ -1,0 +1,57 @@
+table {
+    border-collapse: collapse;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    width: 1140px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.form__items {
+    border: 1px solid blue;
+    border-radius: 30px;
+    width: 400px;
+    margin: inherit;
+    margin-top: 50px;
+    align-items: center;
+    display: flex;
+    justify-content: space-between;
+    background: #c3ecf8;
+}
+
+.form__item {
+    margin: 30px auto ;
+}
+
+.item__table {
+    margin: inherit;
+    align-items: center;
+}
+
+table td, th {
+    padding: 5px;
+}
+
+.create-button {
+    color: blue;
+    cursor: pointer;
+    padding: 5px;
+}
+
+.edit__button {
+    padding: 2px 5px;
+    background: #25A6E1;
+    cursor: pointer;
+}
+
+.delete__button {
+    padding: 2px 5px;
+    background: #CD5C5C;
+    cursor: pointer;
+}

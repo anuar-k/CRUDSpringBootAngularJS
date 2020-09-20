@@ -1,0 +1,70 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>AngularJS</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.0/angular.min.js"></script>
+    <link th:href="@{/main.css}" rel="stylesheet"/>
+    <script th:src="@{/main.js}"></script>
+</head>
+
+<body ng-app="UserManagement" ng-controller="UserController">
+<div class="container">
+    <div class="form__items">
+        <div class="form__item">
+            <h3>
+                CRUD: Spring Boot + Rest + AngularJS
+            </h3>
+            <form ng-submit="submitUser()">
+                <table border="0">
+                    <tr>
+                        <td>User Id</td>
+                        <td>{{userForm.id}}</td>
+                    </tr>
+                    <tr>
+                        <td>User No</td>
+                        <td><input type="text" ng-model="userForm.no" required="required"/></td>
+                    </tr>
+                    <tr>
+                        <td>User Name</td>
+                        <td><input type="text" ng-model="userForm.name" required="required"/></td>
+                    </tr>
+                    <tr>
+                        <td colspan="2">
+                            <input type="submit" value="Submit" class="first__button"/>
+                        </td>
+                    </tr>
+                </table>
+            </form>
+            <br/>
+
+            <a class="create-button" ng-click="createUser()">Create User</a>
+            <br/>
+
+            <div class="item__table"></div>
+            <table border="1">
+                <tr>
+                    <th>User Id</th>
+                    <th>User No</th>
+                    <th>User Name</th>
+                    <th>Edit</th>
+                    <th>Delete</th>
+                </tr>
+                <!-- $scope.user -->
+                <tr ng-repeat="user in users">
+                    <td> {{user.id}}</td>
+                    <td> {{user.no}}</td>
+                    <td> {{user.name}}</td>
+                    <td>
+                        <a ng-click="editUser(user)" class="edit__button">Edit</a>
+                    </td>
+                    <td>
+                        <a ng-click="deleteUser(user)" class="delete__button">Delete</a>
+                    </td>
+                </tr>
+            </table>
+        </div>
+    </div>
+</div>
+</div>
+</body>
+</html>
